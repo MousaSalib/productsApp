@@ -1,0 +1,12 @@
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col" *ngFor="let item of Products | filter: searchKey: 'title'">
+    <div class="card" *ngIf="!loading">
+      <app-child-product [data]="item" (item)="addToCart($event)"></app-child-product>
+    </div>
+  </div>
+  <div class="text-center w-100" *ngIf="loading">
+    <app-spinner></app-spinner>
+  </div>
+</div>
+
+

@@ -1,0 +1,12 @@
+<img [src]="data.image" class="card-img-top" alt="..." width="100px" height="200px" routerLink="/details/{{data.id}}">
+<div class="card-body bg-danger" style="height: 220px;">
+<h5 class="card-title text-warning">{{data.title}}</h5>
+<p class="card-text text-warning">{{data.price}} L.E</p>
+<div class="d-flex justify-content-between mt-auto">
+  <!-- <button class="btn btn-primary" >Details</button> -->
+  <button class="btn btn-warning" *ngIf="!addButton" (click)="addButton = true">Add to cart</button>
+  <div class="d-flex justify-content-between" *ngIf="addButton">
+    <input type="number" class="form-control ps-5" [(ngModel)]="amount">
+    <button class="btn btn-warning" (click)="add(); addButton = false">Add</button>
+  </div>
+</div>

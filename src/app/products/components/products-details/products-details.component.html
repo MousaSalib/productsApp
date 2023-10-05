@@ -1,0 +1,19 @@
+
+<div class="card bg-danger" style="max-width: 100%;">
+  <div class="row g-0" *ngIf="!loading">
+    <div class="col-md-4">
+      <img [src]="data.image" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8 text-center">
+
+      <div class="card-body text-warning">
+        <h2 class="card-title">{{data.title}}</h2>
+        <h4 class="card-text">Category: {{data.category}}</h4>
+        <h4 class="card-text">Price: {{data.price}} LE</h4>
+        <p class="card-text">Description: {{data.description}}</p>
+      </div>
+    </div>
+  </div>
+  <app-spinner class="text-center" *ngIf="loading"></app-spinner>
+</div>
+
